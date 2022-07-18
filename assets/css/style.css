@@ -16,3 +16,206 @@
     text-decoration: none;
     list-style: none;
 }
+
+body {
+    background-color: var(--very-dark-blue-color);
+}
+
+.bg-pattern {
+    height: 50vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: url('../../images/bg-desktop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: flex-end;
+    width: 65%;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.card:nth-child(1) {
+    background-color: var(--dark-blue-color);
+    border-radius: 10px;
+    border-top-right-radius: 80px;
+    width: 40%;
+    margin-right: 2rem;
+}
+
+.card:nth-child(1) .card-icon-list {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.card:nth-child(1) .card-icon-item {
+    margin-right: 1rem;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    height: 40px;
+    background-color: var(--very-dark-blue-color);
+}
+
+.card:nth-child(1) .card-icon-item:last-child {
+    margin-right: 0;
+}
+
+.card:nth-child(2) {
+    position: relative;
+    width: 80%;
+    background-color: var(--dark-blue-color);
+    border-radius: 10px;
+}
+
+.card:nth-child(2) .card-text {
+    color: var(--pale-blue-color);
+}
+
+.card:nth-child(2) .amount-data {
+    font-weight: 700;
+}
+
+.card:nth-child(2) .card-progress-bar-raw {
+    height: 15px;
+    margin: .5rem 0 .2rem 0;
+    width: 100%;
+    border-radius: 60px;
+    background-color: var(--very-dark-blue-color);
+}
+
+.card:nth-child(2) .card-progress-bar {
+    background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    height: 100%;
+    width: 81.5%;
+    border-radius: 60px;
+}
+
+.card:nth-child(2) .card-info {
+    color: var(--pale-blue-color);
+    font-weight: 700;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card:nth-child(2) .card-info-text {
+    font-size: 13px;
+}
+
+.card:nth-child(2) .card-popup {
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    padding: .7rem;
+    right: 7%;
+    top: -55%;
+    transform: translateY(50%);
+}
+
+.card-popup-arrow {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    right: 0;
+    top: 80%;
+    border-left: 30px solid transparent;
+    border-top: 30px solid white;
+}
+
+.card-popup-info {
+    display: flex;
+
+    align-items: center;
+}
+
+.card-popup-info .card-popup-text:nth-child(1) {
+    font-weight: 700;
+    font-size: 28px;
+    margin-right: .5rem;
+}
+
+
+.card-popup-info .card-popup-text:nth-child(2) {
+    color: var(--grayish-blue-color);
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+
+.card {
+    box-shadow: 0 0 40px var(--very-dark-blue-color);
+}
+
+@media screen and (max-width: 768px) {
+    .bg-pattern {
+        display: none;
+    }
+
+    body {
+        background: url('../../images/bg-mobile.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .main {
+        position: static;
+        transform: none;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card:nth-child(1), .card:nth-child(2) {
+        width: 100%;
+        box-shadow: 0 0 50px var(--very-dark-blue-color);
+        margin: 0;
+    }
+
+    .card:nth-child(2) {
+        margin-top: 1.4rem;
+    }
+
+    .card:nth-child(2) .card-popup {
+        bottom: auto;
+        right: auto;
+        left: 50%;
+        top: 85%;
+        transform: translateX(-50%);
+    }
+
+    .card:nth-child(2) .card-text {
+        font-size: 11px;
+    }
+
+    .card-popup-arrow {
+        display: none;
+    }
+    .card-popup-info .card-popup-text:nth-child(1) {
+        font-size: 22px;
+    }
+
+    .card-popup-info .card-popup-text:nth-child(2) {
+        font-size: 10px;
+    }
+}
